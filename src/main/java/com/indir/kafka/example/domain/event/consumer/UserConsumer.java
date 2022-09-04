@@ -36,6 +36,7 @@ public class UserConsumer {
         log.info("Event saved...");
 
     }
+    
     @KafkaListener(topics = "user-deleted-topic", groupId = "myGroup", containerFactory = "userDeletedKafkaListenerFactory")
     public void consume(UserDeletedEvent userDeletedEvent) {
         log.info("Listening UserDeletedEvent  {}", userDeletedEvent);
